@@ -20,6 +20,10 @@ public abstract class Person {
 		log.info("Person created: {}", name);
 	}
 	
+	public Person() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+	
 	public int getAge() {
 		return Period.between(birthDate, LocalDate.now()).getYears();
 	}
