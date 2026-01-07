@@ -4,7 +4,7 @@ import java.time.LocalDate;
  * AuditStudentクラスのテストプログラム
  * Week 6レッスン4で新規追加：複数新規ファイル管理の体験用
  */
-public class AuditStudentTest {
+public class AuditStudentDemo {
 
     public static void main(String[] args) {
         System.out.println("=== AuditStudent（聴講生）テストプログラム ===");
