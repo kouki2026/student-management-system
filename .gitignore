@@ -1,0 +1,13 @@
+# コンパイル済みファイル
+bin/
+target/
+
+# ログファイル
+*.log
+
+# IDE設定
+.settings/
+
+# OS固有ファイル  
+Thumbs.db
+.DS_Store
