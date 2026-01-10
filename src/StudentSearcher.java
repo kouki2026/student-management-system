@@ -2,20 +2,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 学生検索機能クラス
- * Week 6レッスン4実践演習で作成：開発フロー体験用
- */
 public class StudentSearcher {
 
-    /**
-     * 名前による部分一致検索
-     */
     public static List<Student> searchByName(List<Student> students, String keyword) {
         List<Student> results = new ArrayList<>();
 
         if (keyword == null || keyword.trim().isEmpty()) {
-            return results;  // 空のキーワードの場合は空のリストを返す
+            return results;  
         }
 
         String lowerKeyword = keyword.toLowerCase().trim();
@@ -29,9 +22,6 @@ public class StudentSearcher {
         return results;
     }
 
-    /**
-     * 専攻による検索
-     */
     public static List<Student> searchByMajor(List<Student> students, String major) {
         List<Student> results = new ArrayList<>();
 
@@ -50,9 +40,6 @@ public class StudentSearcher {
         return results;
     }
 
-    /**
-     * 年齢範囲による検索
-     */
     public static List<Student> searchByAgeRange(List<Student> students, int minAge, int maxAge) {
         List<Student> results = new ArrayList<>();
 
@@ -66,9 +53,6 @@ public class StudentSearcher {
         return results;
     }
 
-    /**
-     * 検索結果の整形表示
-     */
     public static String formatSearchResults(List<Student> results, String searchType, String keyword) {
         StringBuilder sb = new StringBuilder();
 

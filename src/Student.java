@@ -84,10 +84,6 @@ public abstract class Student extends Person
 				name, getStudentType(), gpa, getGradeLevel());
 	}
 	
-	/**
-	 * 学生の詳細情報を文字列で返すメソッド
-	 * Week 6レッスン4で追加：変更管理の実践用
-	 */
 	public String getDetailedInfo() {
 	    StringBuilder info = new StringBuilder();
 	    info.append("=== 学生詳細情報 ===\n");
@@ -99,11 +95,7 @@ public abstract class Student extends Person
 	    info.append("====================");
 	    return info.toString();
 	}
-	
-	/**
-	 * 学生の年齢区分を判定するメソッド
-	 * Week 6レッスン4で追加：Git変更追跡の体験用
-	 */
+
 	public String getAgeCategory() {
 	    if (getAge() < 20) {
 	        return "10代";
@@ -116,19 +108,11 @@ public abstract class Student extends Person
 	    }
 	}
 	
-	/**
-	 * 検索用の統合情報を取得
-	 * Week 6レッスン4実践演習で追加：検索機能拡張用
-	 */
 	public String getSearchableInfo() {
 	    return String.format("%s %s %s %d", 
 	                        getName(), getId(), getMajor(), getAge());
 	}
 
-	/**
-	 * 指定されたキーワードが学生情報に含まれるかチェック
-	 * Week 6レッスン4実践演習で追加：汎用検索用
-	 */
 	public boolean containsKeyword(String keyword) {
 	    if (keyword == null || keyword.trim().isEmpty()) {
 	        return false;

@@ -1,30 +1,19 @@
 import java.time.LocalDate;
 
-/**
- * 聴講生クラス
- * Week 6レッスン4で新規追加：新規ファイル管理の実践用
- * 
- * 正規の学生とは異なり、単位取得はできないが講義を聴講できる学生
- */
+
 
 public class AuditStudent extends Person {
 
-    private String auditCourse;  // 聴講している講座名
-    private int attendanceCount;  // 出席回数
-    private boolean isActive;     // 聴講継続中かどうか
+    private String auditCourse;  
+    private int attendanceCount;  
+    private boolean isActive;     
 
-    /**
-     * デフォルトコンストラクタ
-     */
     public AuditStudent() {
         super();
-        this.isActive = true;  // デフォルトで聴講継続中
+        this.isActive = true;  
         this.attendanceCount = 0;
     }
 
-    /**
-     * 全パラメータコンストラクタ
-     */
     public AuditStudent(String id, String name, LocalDate birthDate, String email, 
                        String auditCourse) {
         super(id, name, birthDate, email);
@@ -33,51 +22,30 @@ public class AuditStudent extends Person {
         this.isActive = true;
     }
 
-    /**
-     * 聴講講座名の取得
-     */
     public String getAuditCourse() {
         return auditCourse;
     }
 
-    /**
-     * 聴講講座名の設定
-     */
     public void setAuditCourse(String auditCourse) {
         this.auditCourse = auditCourse;
     }
 
-    /**
-     * 出席回数の取得
-     */
     public int getAttendanceCount() {
         return attendanceCount;
     }
 
-    /**
-     * 出席回数の設定
-     */
     public void setAttendanceCount(int attendanceCount) {
-        this.attendanceCount = Math.max(0, attendanceCount);  // 負の値を防ぐ
+        this.attendanceCount = Math.max(0, attendanceCount);  
     }
 
-    /**
-     * 聴講継続状態の取得
-     */
     public boolean isActive() {
         return isActive;
     }
 
-    /**
-     * 聴講継続状態の設定
-     */
     public void setActive(boolean active) {
         isActive = active;
     }
 
-    /**
-     * 出席回数をカウントアップ
-     */
     public void markAttendance() {
         if (isActive) {
             attendanceCount++;
@@ -87,18 +55,12 @@ public class AuditStudent extends Person {
         }
     }
 
-    /**
-     * 聴講を終了する
-     */
     public void endAudit() {
         this.isActive = false;
         System.out.println(getName() + "さんの聴講が終了しました。");
         System.out.println("総出席回数: " + attendanceCount + "回");
     }
 
-    /**
-     * 聴講生の情報を表示
-     */
     @Override
     public String introduce() {
         return String.format("聴講生 - ID:%s, 氏名:%s, 年齢:%d歳, " +
@@ -108,9 +70,6 @@ public class AuditStudent extends Person {
                            isActive ? "継続中" : "終了");
     }
 
-    /**
-     * 聴講生レポートの生成
-     */
     public String generateAuditReport() {
         StringBuilder report = new StringBuilder();
         report.append("=== 聴講生レポート ===\n");

@@ -13,6 +13,17 @@ public class UndergraduateStudent extends Student implements ScholarshipEligible
 	private int currentYear;
 	private String club;
 	
+	public UndergraduateStudent() {
+        super(
+            null,
+            null,
+            null,
+            null,
+            null,
+            0
+        );
+    }
+	
 	@Builder
 	public UndergraduateStudent(String id, String name, LocalDate birthDate,
 							String email, String major, int enrollmentYear,

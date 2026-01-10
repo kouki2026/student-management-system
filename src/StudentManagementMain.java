@@ -9,18 +9,13 @@ public class StudentManagementMain {
         log.info("Starting OOP Advanced Student Management System");
 
         try {
-            // システム初期化
+
             AdvancedStudentManagementSystem system = new AdvancedStudentManagementSystem();
 
             System.out.println("=== OOP応用版学生管理システム起動 ===");
             System.out.println("Week 5技術統合デモンストレーション");
             System.out.println();
 
-            // ========================================
-            // 学生データ作成（Builder パターン活用）
-            // ========================================
-
-            // 学部生の作成
             UndergraduateStudent tanaka = UndergraduateStudent.builder()
                 .id("U001")
                 .name("田中太郎")
@@ -43,7 +38,6 @@ public class StudentManagementMain {
                 .club("数学研究会")
                 .build();
 
-            // 大学院生の作成
             GraduateStudent yamada = GraduateStudent.builder()
                 .id("G001")
                 .name("山田次郎")
@@ -70,23 +64,14 @@ public class StudentManagementMain {
                 .isTA(false)
                 .build();
 
-            // ========================================
-            // 学生登録（例外処理を含む）
-            // ========================================
-
             System.out.println("--- 学生登録処理 ---");
             system.addStudent(tanaka);
             system.addStudent(sato);
             system.addStudent(yamada);
             system.addStudent(suzuki);
 
-            // ========================================
-            // 成績データ追加（例外安全・Builderパターン）
-            // ========================================
-
             System.out.println("\n--- 成績データ追加 ---");
 
-            // 田中の成績
             system.addGrade("U001", Grade.builder()
                 .subject("プログラミング基礎")
                 .score(85)
@@ -103,7 +88,6 @@ public class StudentManagementMain {
                 .credits(3)
                 .build());
 
-            // 佐藤の成績
             system.addGrade("U002", Grade.builder()
                 .subject("微積分学")
                 .score(95)
@@ -120,7 +104,6 @@ public class StudentManagementMain {
                 .credits(4)
                 .build());
 
-            // 山田の成績
             system.addGrade("G001", Grade.builder()
                 .subject("機械学習理論")
                 .score(93)
@@ -137,7 +120,6 @@ public class StudentManagementMain {
                 .credits(2)
                 .build());
 
-            // 鈴木の成績
             system.addGrade("G002", Grade.builder()
                 .subject("量子力学")
                 .score(91)
@@ -146,9 +128,6 @@ public class StudentManagementMain {
                 .credits(3)
                 .build());
 
-            // ========================================
-            // ポリモーフィズムを活用した処理
-            // ========================================
 
             System.out.println("\n--- 個別自己紹介（ポリモーフィズム） ---");
             tanaka.showDetails();
@@ -156,31 +135,20 @@ public class StudentManagementMain {
             yamada.showDetails();
             System.out.println();
 
-            // ========================================
-            // システム機能のテスト
-            // ========================================
 
-            // 全学生レポート生成
             system.generateAllReports();
 
-            // 学生タイプ別統計
             system.generateStatisticsByType();
 
-            // 奨学金シミュレーション
             system.simulateScholarships();
             System.out.println();
 
-            // システム状態表示
             system.showSystemStatus();
-
-            // ========================================
-            // 例外処理のテスト
-            // ========================================
 
             System.out.println("\n--- 例外処理テスト ---");
 
             try {
-                // 存在しない学生の検索
+
                 system.findStudent("X999");
             } catch (StudentNotFoundException e) {
                 System.out.println("期待された例外: " + e.getMessage());
@@ -188,10 +156,10 @@ public class StudentManagementMain {
             }
 
             try {
-                // 不正な成績データ
+
                 system.addGrade("U001", Grade.builder()
                     .subject("テスト科目")
-                    .score(150) // 不正な点数
+                    .score(150) 
                     .semester("2024春")
                     .testDate(LocalDate.now())
                     .credits(3)

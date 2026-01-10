@@ -40,18 +40,10 @@ public abstract class Person {
 		System.out.println(introduce());
 	}
 	
-	/**
-	 * 人物の基本情報を短縮形式で表示
-	 * Week 6レッスン4で追加：複合変更管理の実践用
-	 */
 	public String getShortInfo() {
 	    return String.format("%s(%d歳)", getName(), getAge());
 	}
-
-	/**
-	 * メールドメインを取得
-	 * Week 6レッスン4で追加：複合変更管理の実践用
-	 */
+	
 	public String getEmailDomain() {
 	    if (getEmail() != null && getEmail().contains("@")) {
 	        return getEmail().substring(getEmail().indexOf("@") + 1);
