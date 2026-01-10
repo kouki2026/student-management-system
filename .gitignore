@@ -1,12 +1,26 @@
+# IDE設定ファイル
+.metadata/
+.settings/
+.project
+.classpath
+
+# 一時ファイル
+*.tmp
+*.log
+*~
+
+# 機密情報
+config/secrets.properties
+*.key
+*.pem
+
+# 大容量ファイル
+*.zip
+*.rar
+
 # コンパイル済みファイル
 bin/
 target/
-
-# ログファイル
-*.log
-
-# IDE設定
-.settings/
 
 # OS固有ファイル  
 Thumbs.db
