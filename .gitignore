@@ -22,6 +22,6 @@ config/secrets.properties
 bin/
 target/
 
-# OS固有ファイル  
+# OS固有ファイル
 Thumbs.db
 .DS_Store
